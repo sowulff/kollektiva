@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { supabase } from "../../utils/supabaseClient";
 
 export default () => {
   return (

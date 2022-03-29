@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+import { useState, useEffect } from "react";
+import { supabase } from "../utils/supabaseClient";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function ({ Component, pageProps }) {
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    setSession(supabase.auth.session());
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
+
+  return <Component {...pageProps} session={session} />;
 }
-
-export default MyApp
