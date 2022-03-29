@@ -11,7 +11,11 @@ function Register() {
   };
   return (
     <div>
-      <h1>Registrera</h1>
+      <h1>
+        Registrera dig för att spara dina uppgifter, eller fortsätt vidare för
+        att testa.
+      </h1>
+
       <form onSubmit={handleSubmit}>
         <label for="email">Email</label>
         <input
