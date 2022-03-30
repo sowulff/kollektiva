@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { HouseType, RentalType } from "./form";
 import { useState } from "react";
-import FormCompleted from "./FormCompleted";
 
 function FormCard() {
   const [step, setstep] = useState(1);
