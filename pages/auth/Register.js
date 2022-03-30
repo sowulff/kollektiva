@@ -1,15 +1,23 @@
 import { supabase } from "../../utils/supabaseClient";
 
 function Register() {
+  const [submitted, setSubmitted] = useState(false);
   const handleSubmit = async (form) => {
     form.preventDefault();
     const { data, error } = await supabase.auth.signUp({
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     });
-    if (error) console.log(error);
+    if (error) {
+      console.log(error);
+    } else {
+      setSubmitted(true);
+    }
     console.log(supabase.auth.user());
   };
+  if (submitted) {
+    return <h1>check your email</h1>;
+  }
   return (
     <div>
       <h1>
