@@ -1,4 +1,5 @@
 import validator from "validator";
+import styles from "../../styles/form/HouseType.module.scss";
 export default function HouseType({
   nextStep,
   handleFormData,
@@ -7,24 +8,37 @@ export default function HouseType({
 }) {
   const submitFormData = (e) => {
     e.preventDefault();
-    if (validator.isEmpty(values.name)) {
+    if (validator.isEmpty(values.house)) {
       console.log(step);
     } else {
       nextStep();
     }
   };
   return (
-    <div>
+    <div className={styles.wrapper}>
+      <h3>Vad för bostadstyp vill du hyra ut?</h3>
       <form onSubmit={submitFormData}>
-        <label htmlFor="name">TEST2</label>
-        <input
-          onChange={handleFormData("name")}
-          type="text"
-          name="name"
-          id="name"
-          defaultValue={values.name}
-        ></input>
-        <button type="submit">submit</button>
+        <div className={styles.container}>
+          <div className={styles.button}>
+            <input
+              type="radio"
+              name="house"
+              id="villa"
+              defaultValue={values.house}
+            ></input>
+            <label htmlFor="total">Villa</label>
+          </div>
+          <div className={styles.button}>
+            <input
+              type="radio"
+              name="house"
+              id="lgh"
+              defaultValue={values.house}
+            ></input>
+            <label htmlFor="total">Lägenhet</label>
+          </div>
+        </div>
+        <button type="submit">nästa</button>
         <button onClick={prevStep}>back</button>
       </form>
     </div>
