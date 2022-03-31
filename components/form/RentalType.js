@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import styles from "../../styles/form/RentalType.module.scss";
 
 export default function RentalType({ nextStep, handleFormData, values }) {
+  const formKey = "rentalType";
   const submitFormData = (e) => {
     e.preventDefault();
+
     nextStep();
   };
 
@@ -26,7 +28,8 @@ export default function RentalType({ nextStep, handleFormData, values }) {
                 type="radio"
                 name="name"
                 id="total"
-                defaultValue={values.name}
+                value="Hela"
+                onChange={handleFormData(formKey)}
               ></input>
               <label htmlFor="total">Hyra ut hela bostaden</label>
             </div>
@@ -45,7 +48,8 @@ export default function RentalType({ nextStep, handleFormData, values }) {
                 type="radio"
                 name="name"
                 id="part"
-                defaultValue={values.name}
+                value="halva"
+                onChange={handleFormData(formKey)}
               ></input>
               <label htmlFor="part">Hyra ut delar av bostaden</label>
             </div>
@@ -64,12 +68,14 @@ export default function RentalType({ nextStep, handleFormData, values }) {
                 type="radio"
                 name="name"
                 id="change"
-                defaultValue={values.name}
+                value="byta"
+                onChange={handleFormData(formKey)}
               ></input>
               <label htmlFor="change">Byta bostad</label>
             </div>
           </div>
         </div>
+
         <button type="submit" className={styles.next}>
           nästa
         </button>

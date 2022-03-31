@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { HouseType, RentalType } from "./form";
+import FormCompleted from "./FormCompleted";
 import { useState } from "react";
 
 function FormCard() {
   const [step, setstep] = useState(1);
 
   const [formData, setFormData] = useState({
-    name: "",
+    rentalType: "",
   });
 
   const nextStep = () => {
@@ -49,8 +50,7 @@ function FormCard() {
         />
       );
     case 3:
-    // console.log(values);
-    // return <FormCompleted values={formData} />;
+      return <FormCompleted formData={formData} />;
   }
 }
 

@@ -6,25 +6,24 @@ export default function HouseType({
   prevStep,
   values,
 }) {
+  const formKey = "houseType";
   const submitFormData = (e) => {
     e.preventDefault();
-    if (validator.isEmpty(values.house)) {
-      console.log(step);
-    } else {
-      nextStep();
-    }
+    nextStep();
   };
   return (
     <div className={styles.wrapper}>
       <h3>Vad för bostadstyp vill du hyra ut?</h3>
+      <p></p>
       <form onSubmit={submitFormData}>
         <div className={styles.container}>
           <div className={styles.button}>
             <input
               type="radio"
               name="house"
+              value="villa"
               id="villa"
-              defaultValue={values.house}
+              onChange={handleFormData(formKey)}
             ></input>
             <label htmlFor="total">Villa</label>
           </div>
@@ -33,13 +32,14 @@ export default function HouseType({
               type="radio"
               name="house"
               id="lgh"
-              defaultValue={values.house}
+              value="lgh"
+              onChange={handleFormData(formKey)}
             ></input>
             <label htmlFor="total">Lägenhet</label>
           </div>
         </div>
-        <button type="submit">nästa</button>
         <button onClick={prevStep}>back</button>
+        <button type="submit">nästa</button>
       </form>
     </div>
   );
