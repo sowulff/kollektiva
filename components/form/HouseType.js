@@ -1,10 +1,9 @@
-import validator from "validator";
 import styles from "../../styles/form/HouseType.module.scss";
 export default function HouseType({
   nextStep,
   handleFormData,
   prevStep,
-  values,
+  formData,
 }) {
   const formKey = "houseType";
   const submitFormData = (e) => {

@@ -2,12 +2,13 @@ import next from "next";
 import React, { useState } from "react";
 import styles from "../../styles/form/RentalType.module.scss";
 
-export default function RentalType({ nextStep, handleFormData, values }) {
+export default function RentalType({ nextStep, handleFormData, formData }) {
   const formKey = "rentalType";
   const submitFormData = (e) => {
     e.preventDefault();
-
-    nextStep();
+    if (formData.rentalType !== "") {
+      nextStep();
+    }
   };
 
   return (

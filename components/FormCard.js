@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import { HouseType, RentalType } from "./form";
 import FormCompleted from "./FormCompleted";
 import { useState } from "react";
+import HouseInfo from "./form/HouseInfo";
 
 function FormCard() {
   const [step, setstep] = useState(1);
 
   const [formData, setFormData] = useState({
     rentalType: "",
+    houseType: "",
+    houseInfo: "",
   });
 
   const nextStep = () => {
@@ -36,7 +39,7 @@ function FormCard() {
         <RentalType
           nextStep={nextStep}
           handleFormData={handleInputData}
-          values={formData}
+          formData={formData}
         />
       );
     // case 2 to show stepTwo form
@@ -45,11 +48,21 @@ function FormCard() {
         <HouseType
           nextStep={nextStep}
           handleFormData={handleInputData}
-          values={formData}
+          formData={formData}
           prevStep={prevStep}
         />
       );
     case 3:
+      return (
+        <HouseInfo
+          nextStep={nextStep}
+          handleFormData={handleInputData}
+          formData={formData}
+          prevStep={prevStep}
+        />
+      );
+    //last case
+    case 4:
       return <FormCompleted formData={formData} />;
   }
 }
