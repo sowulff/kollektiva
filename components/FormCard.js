@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { HouseType, RentalType } from "./form";
+import { HouseType, RentalType } from "../pages/form";
 import FormCompleted from "./FormCompleted";
 import { useState } from "react";
-import HouseInfo from "./form/HouseInfo";
+import HouseInfo from "../pages/form/steg3";
+import react from "react";
 
 function FormCard() {
   const [step, setstep] = useState(1);
@@ -30,6 +31,28 @@ function FormCard() {
       [input]: value,
     }));
   };
+
+  return (
+    <Router>
+      <Switch>
+        <Route path="/">
+          <RentalType
+            nextStep={nextStep}
+            handleFormData={handleInputData}
+            formData={formData}
+          />
+        </Route>
+        <Route path="/type">
+          <HouseType
+            nextStep={nextStep}
+            handleFormData={handleInputData}
+            formData={formData}
+            prevStep={prevStep}
+          />
+        </Route>
+      </Switch>
+    </Router>
+  );
 
   // javascript switch case to show different form in each step
   switch (step) {
@@ -66,5 +89,7 @@ function FormCard() {
       return <FormCompleted formData={formData} />;
   }
 }
+
+//react router
 
 export default FormCard;

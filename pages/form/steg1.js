@@ -1,20 +1,26 @@
 import next from "next";
 import React, { useState } from "react";
 import styles from "../../styles/form/RentalType.module.scss";
+import Link from "next/link";
+import AppContext from "../../components/AppContext";
+import { useContext } from "react";
 
-export default function RentalType({ nextStep, handleFormData, formData }) {
+export default function RentalType() {
   const formKey = "rentalType";
-  const submitFormData = (e) => {
-    e.preventDefault();
-    if (formData.rentalType !== "") {
-      nextStep();
-    }
+
+  const state = useContext(AppContext);
+
+  let { formData } = state.state;
+
+  const handleFormData = (input) => (e) => {
+    const { value } = e.target;
+    state.setFormData({ ...formData, [input]: value });
   };
 
   return (
     <div className={styles.container}>
       <h3>Vad vill du göra?</h3>
-      <form onSubmit={submitFormData} className={styles.form}>
+      <form className={styles.form}>
         <div className={styles.cards}>
           <div className={styles.card}>
             <h4>Hyra ut hela bostaden</h4>
@@ -45,7 +51,6 @@ export default function RentalType({ nextStep, handleFormData, formData }) {
             </p>
             <div className={styles.button}>
               <input
-                // onChange={handleFormData("name")}
                 type="radio"
                 name="name"
                 id="part"
@@ -65,7 +70,6 @@ export default function RentalType({ nextStep, handleFormData, formData }) {
             </p>
             <div className={styles.button}>
               <input
-                // onChange={handleFormData("name")}
                 type="radio"
                 name="name"
                 id="change"
@@ -77,9 +81,9 @@ export default function RentalType({ nextStep, handleFormData, formData }) {
           </div>
         </div>
 
-        <button type="submit" className={styles.next}>
-          nästa
-        </button>
+        <Link href={"/form/steg2"}>
+          <a className={styles.next}>nästa</a>
+        </Link>
       </form>
     </div>
   );

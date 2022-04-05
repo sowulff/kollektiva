@@ -1,14 +1,16 @@
+import Link from "next/link";
 import styles from "../../styles/form/HouseType.module.scss";
-export default function HouseType({
-  nextStep,
-  handleFormData,
-  prevStep,
-  formData,
-}) {
+import AppContext from "../../components/AppContext";
+import { useContext } from "react";
+
+export default function HouseType() {
   const formKey = "houseType";
+  const value = useContext(AppContext);
+  let { formData } = value.state;
+  console.log(formData);
   const submitFormData = (e) => {
     e.preventDefault();
-    nextStep();
+    // nextStep();
   };
   return (
     <div className={styles.wrapper}>
@@ -22,7 +24,7 @@ export default function HouseType({
               name="house"
               value="villa"
               id="villa"
-              onChange={handleFormData(formKey)}
+              // onChange={handleFormData(formKey)}
             ></input>
             <label htmlFor="total">Villa</label>
           </div>
@@ -32,13 +34,17 @@ export default function HouseType({
               name="house"
               id="lgh"
               value="lgh"
-              onChange={handleFormData(formKey)}
+              // onChange={handleFormData(formKey)}
             ></input>
             <label htmlFor="total">Lägenhet</label>
           </div>
         </div>
-        <button onClick={prevStep}>back</button>
-        <button type="submit">nästa</button>
+        <Link href={"/form/steg1"}>
+          <a className={styles.next}>tillbaka</a>
+        </Link>
+        <Link href={"/form/steg3"}>
+          <a className={styles.next}>nästa</a>
+        </Link>
       </form>
     </div>
   );

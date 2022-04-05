@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
+import AppContext from "../components/AppContext";
 
 export default function ({ Component, pageProps }) {
   const [session, setSession] = useState(null);
@@ -12,5 +13,17 @@ export default function ({ Component, pageProps }) {
     });
   }, []);
 
-  return <Component {...pageProps} session={session} />;
+  const [formData, setFormData] = useState({});
+  return (
+    <AppContext.Provider
+      value={{
+        state: {
+          formData: formData,
+        },
+        setFormData: setFormData,
+      }}
+    >
+      <Component {...pageProps} session={session} />
+    </AppContext.Provider>
+  );
 }

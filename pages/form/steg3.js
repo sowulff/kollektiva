@@ -1,43 +1,33 @@
 import { useState } from "react";
+import Link from "next/link";
+import AppContext from "../../components/AppContext";
+import { useContext } from "react";
 
-export default function HouseInfo({
-  nextStep,
-  handleFormData,
-  prevStep,
-  formData,
-}) {
+export default function HouseInfo() {
   const formKey = "houseInfo";
-  const submitFormData = (e) => {
-    e.preventDefault();
-    // console.log({
-    //   target: {
-    //     adress: document.getElementById("adress").value,
-    //     city: document.getElementById("city").value,
-    //   },
-    // });
-    handleFormData(formKey)({
-      target: {
-        value: {
-          adress: document.getElementById("address").value,
-          city: document.getElementById("city").value,
-          rooms: document.getElementById("rooms").value,
-          living_area: document.getElementById("living_area").value,
-          garden_area: document.getElementById("garden_area").value,
-          operating_cost: document.getElementById("operating_cost").value,
-          move_in: document.getElementById("move_in").value,
-        },
-      },
-    });
-    nextStep();
-  };
+  const state = useContext(AppContext);
 
-  const [adress, setAdress] = useState("");
+  let { formData } = state.state;
+
+  const handleFormData = () => {
+    const target = {
+      adress: document.getElementById("address").value,
+      city: document.getElementById("city").value,
+      rooms: document.getElementById("rooms").value,
+      living_area: document.getElementById("living_area").value,
+      garden_area: document.getElementById("garden_area").value,
+      operating_cost: document.getElementById("operating_cost").value,
+      move_in: document.getElementById("move_in").value,
+    };
+    state.setFormData({ ...formData, ...target });
+    console.log(formData);
+  };
 
   return (
     <div>
       <h3>Berätta lite om din bostad.</h3>
       <p></p>
-      <form onSubmit={submitFormData}>
+      <form onInputCapture={handleFormData}>
         <div>
           <div>
             <label htmlFor="address">Adress</label>
@@ -68,8 +58,12 @@ export default function HouseInfo({
             <input type="date" name="info" id="move_in"></input>
           </div>
         </div>
-        <button onClick={prevStep}>back</button>
-        <button type="submit">nästa</button>
+        <Link href={"/form/steg2"}>
+          <a>tillbaka</a>
+        </Link>
+        <Link href={"/form/steg4"}>
+          <a>nästa</a>
+        </Link>
       </form>
     </div>
   );
