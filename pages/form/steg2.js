@@ -40,10 +40,10 @@ export default function HouseType() {
           </div>
         </div>
         <Link href={"/form/steg1"}>
-          <a className={styles.next}>tillbaka</a>
+          <a className={styles.next}>Gå tillbaka</a>
         </Link>
         <Link href={"/form/steg3"}>
-          <a className={styles.next}>nästa</a>
+          <a className={styles.next}>Nästa</a>
         </Link>
       </form>
     </div>

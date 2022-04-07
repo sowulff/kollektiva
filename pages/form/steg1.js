@@ -1,9 +1,12 @@
 import next from "next";
 import React, { useState } from "react";
-import styles from "../../styles/form/RentalType.module.scss";
+import styles from "../../styles/form/steg1.module.scss";
 import Link from "next/link";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
+import houseIcon from "../../assets/houseIcon.svg";
+import bedIcon from "../../assets/bedIcon.svg";
+import changeHouseIcon from "../../assets/changeHouseIcon.svg";
 
 export default function RentalType() {
   const formKey = "rentalType";
@@ -19,17 +22,12 @@ export default function RentalType() {
 
   return (
     <div className={styles.container}>
-      <h3>Vad vill du göra?</h3>
       <form className={styles.form}>
         <div className={styles.cards}>
           <div className={styles.card}>
+            <img src={houseIcon.src} />
             <h4>Hyra ut hela bostaden</h4>
-            <p>
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type
-            </p>
+
             <div className={styles.button}>
               <input
                 type="radio"
@@ -42,13 +40,9 @@ export default function RentalType() {
             </div>
           </div>
           <div className={styles.card}>
+            <img src={bedIcon.src} />
             <h4>Hyra ut delar av bostaden</h4>
-            <p>
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type
-            </p>
+
             <div className={styles.button}>
               <input
                 type="radio"
@@ -61,13 +55,9 @@ export default function RentalType() {
             </div>
           </div>
           <div className={styles.card}>
+            <img src={changeHouseIcon.src} />
             <h4>Byta bostad</h4>
-            <p>
-              printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an
-              unknown printer took a galley of type and scrambled it to make a
-              type
-            </p>
+
             <div className={styles.button}>
               <input
                 type="radio"
@@ -80,7 +70,9 @@ export default function RentalType() {
             </div>
           </div>
         </div>
-
+        <Link href={"/form"}>
+          <a className={styles.next}>tillbaka</a>
+        </Link>
         <Link href={"/form/steg2"}>
           <a className={styles.next}>nästa</a>
         </Link>
