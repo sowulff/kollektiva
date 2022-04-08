@@ -1,7 +1,10 @@
 import Link from "next/link";
-import styles from "../../styles/form/HouseType.module.scss";
+import styles from "../../styles/form/steg2.module.scss";
+import link from "../../styles/form/formLinks.module.scss";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
+import nextStep from "../../assets/next.svg";
+import prevStep from "../../assets/prev.svg";
 
 export default function HouseType() {
   const formKey = "houseType";
@@ -39,13 +42,20 @@ export default function HouseType() {
             <label htmlFor="total">Lägenhet</label>
           </div>
         </div>
+      </form>
+      <div className={link.links}>
         <Link href={"/form/steg1"}>
-          <a className={styles.next}>Gå tillbaka</a>
+          <a className={link.prev}>
+            <img src={prevStep.src} />
+            Gå Tillbaka
+          </a>
         </Link>
         <Link href={"/form/steg3"}>
-          <a className={styles.next}>Nästa</a>
+          <a className={link.next}>
+            Nästa <img src={nextStep.src} />
+          </a>
         </Link>
-      </form>
+      </div>
     </div>
   );
 }

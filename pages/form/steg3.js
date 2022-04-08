@@ -25,8 +25,6 @@ export default function HouseInfo() {
 
   return (
     <div>
-      <h3>Berätta lite om din bostad.</h3>
-      <p></p>
       <form onInputCapture={handleFormData}>
         <div>
           <div>

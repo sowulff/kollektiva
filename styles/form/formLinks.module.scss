@@ -1,0 +1,20 @@
+@import "../variables.scss";
+.links {
+  margin: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  float: right;
+
+  a {
+    border-radius: 64px;
+    padding: 8px 24px;
+  }
+}
+.next {
+  background: $darkGreen;
+  color: $lightGreen;
+}
+.prev {
+  background: $lightGreen;
+  color: $darkGreen;
+}

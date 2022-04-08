@@ -1,6 +1,7 @@
 import next from "next";
 import React, { useState } from "react";
 import styles from "../../styles/form/steg1.module.scss";
+import link from "../../styles/form/formLinks.module.scss";
 import Link from "next/link";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
@@ -79,15 +80,15 @@ export default function RentalType() {
         </div>
       </form>
 
-      <div className={styles.links}>
+      <div className={link.links}>
         <Link href={"/form"}>
-          <a className={styles.prev}>
+          <a className={link.prev}>
             <img src={prevStep.src} />
             Gå Tillbaka
           </a>
         </Link>
         <Link href={"/form/steg2"}>
-          <a className={styles.next}>
+          <a className={link.next}>
             Nästa <img src={nextStep.src} />
           </a>
         </Link>
