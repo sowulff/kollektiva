@@ -4,9 +4,12 @@ import styles from "../../styles/form/steg1.module.scss";
 import Link from "next/link";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-import houseIcon from "../../assets/houseIcon.svg";
-import bedIcon from "../../assets/bedIcon.svg";
-import changeHouseIcon from "../../assets/changeHouseIcon.svg";
+import houseIcon from "../../assets/steg1/houseIcon.svg";
+import bedIcon from "../../assets/steg1/bedIcon.svg";
+import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
+import nextStep from "../../assets/next.svg";
+import prevStep from "../../assets/prev.svg";
+import logo from "../../assets/logo.svg";
 
 export default function RentalType() {
   const formKey = "rentalType";
@@ -25,9 +28,10 @@ export default function RentalType() {
       <form className={styles.form}>
         <div className={styles.cards}>
           <div className={styles.card}>
-            <img src={houseIcon.src} />
-            <h4>Hyra ut hela bostaden</h4>
-
+            <div className={styles.wrapper}>
+              <img src={houseIcon.src} />
+              <h4>Hyra ut hela bostaden</h4>
+            </div>
             <div className={styles.button}>
               <input
                 type="radio"
@@ -40,8 +44,10 @@ export default function RentalType() {
             </div>
           </div>
           <div className={styles.card}>
-            <img src={bedIcon.src} />
-            <h4>Hyra ut delar av bostaden</h4>
+            <div className={styles.wrapper}>
+              <img src={bedIcon.src} />
+              <h4>Hyra ut delar av bostaden</h4>
+            </div>
 
             <div className={styles.button}>
               <input
@@ -55,9 +61,10 @@ export default function RentalType() {
             </div>
           </div>
           <div className={styles.card}>
-            <img src={changeHouseIcon.src} />
-            <h4>Byta bostad</h4>
-
+            <div className={styles.wrapper}>
+              <img src={changeHouseIcon.src} />
+              <h4>Byta bostad</h4>
+            </div>
             <div className={styles.button}>
               <input
                 type="radio"
@@ -70,13 +77,21 @@ export default function RentalType() {
             </div>
           </div>
         </div>
+      </form>
+
+      <div className={styles.links}>
         <Link href={"/form"}>
-          <a className={styles.next}>tillbaka</a>
+          <a className={styles.prev}>
+            <img src={prevStep.src} />
+            Gå Tillbaka
+          </a>
         </Link>
         <Link href={"/form/steg2"}>
-          <a className={styles.next}>nästa</a>
+          <a className={styles.next}>
+            Nästa <img src={nextStep.src} />
+          </a>
         </Link>
-      </form>
+      </div>
     </div>
   );
 }

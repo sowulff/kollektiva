@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 import AppContext from "../components/AppContext";
+import "../styles/globals.scss";
 
 export default function ({ Component, pageProps }) {
   const [session, setSession] = useState(null);

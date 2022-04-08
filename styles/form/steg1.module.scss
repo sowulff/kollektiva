@@ -1,19 +1,48 @@
+@import "../variables.scss";
+.form {
+  padding: 2rem;
+}
 .cards {
   display: flex;
   gap: 2rem;
-  padding: 2rem;
+  flex-direction: column;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+  }
 }
-
 .card {
   background-color: #f7f5f4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  justify-content: center;
-  padding: 16px 12px 32px;
-  width: 33%;
-
+  justify-content: space-around;
+  padding: 16px 32px;
+  width: 100%;
+  border-radius: 8px;
+  @media screen and (min-width: $tablet) {
+    width: 33%;
+    text-align: center;
+  }
+  .wrapper {
+    display: flex;
+    width: 90%;
+    gap: 1.5rem;
+    font-size: 24px;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+    h4 {
+      margin: 1.5rem 0;
+      color: #125956;
+    }
+    img {
+      width: 2.5rem;
+      @media screen and (min-width: $tablet) {
+        width: 3rem;
+      }
+    }
+  }
+  //button
   .button label,
   .button input {
     display: block;
@@ -22,12 +51,12 @@
     opacity: 0;
   }
   .button input[type="radio"]:checked + label {
-    background: #dd7c42;
+    background: $darkOrange;
     color: #fbefe7;
   }
   .button input[type="radio"] + label {
-    background: #f7ded0;
-    color: #dd7c42;
+    background: $lightOrange;
+    color: $darkOrange;
     padding: 8px 24px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -36,4 +65,24 @@
   .button label {
     cursor: pointer;
   }
+}
+
+.links {
+  margin: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  float: right;
+
+  a {
+    border-radius: 64px;
+    padding: 8px 24px;
+  }
+}
+.next {
+  background: $darkGreen;
+  color: $lightGreen;
+}
+.prev {
+  background: $lightGreen;
+  color: $darkGreen;
 }
