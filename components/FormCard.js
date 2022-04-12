@@ -12,6 +12,7 @@ function FormCard() {
     rentalType: "",
     houseType: "",
     houseInfo: "",
+    comfort: "",
   });
 
   const nextStep = () => {
