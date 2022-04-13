@@ -11,6 +11,7 @@ import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
 import nextStep from "../../assets/next.svg";
 import prevStep from "../../assets/prev.svg";
 import logo from "../../assets/logo.svg";
+import Buttons from "../../components/Buttons";
 
 export default function RentalType() {
   const formKey = "rentalType";

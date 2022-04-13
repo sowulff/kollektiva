@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
+import link from "../../styles/form/formLinks.module.scss";
+import nextStep from "../../assets/next.svg";
+import prevStep from "../../assets/prev.svg";
 
 export default function comfort() {
   const [checked, setChecked] = useState([]);
@@ -17,13 +20,7 @@ export default function comfort() {
 
   // för check till objekt
   const checkedItems = checked.length
-    ? checked.reduce(
-        (total, item) => ({
-          ...total,
-          [item]: true,
-        }),
-        {}
-      )
+    ? checked.reduce((total, item) => [...total, item], [])
     : false;
 
   console.log(checkedItems);
@@ -42,13 +39,19 @@ export default function comfort() {
           <label htmlFor="checkbox">{item}</label>
         </div>
       ))}
-
-      <Link href={"/form/steg4"}>
-        <a>tillbaka</a>
-      </Link>
-      <Link href={"/form/steg6"}>
-        <a>nästa</a>
-      </Link>
+      <div className={link.links}>
+        <Link href={"/form/steg4"}>
+          <a className={link.prev}>
+            <img src={prevStep.src} />
+            Gå Tillbaka
+          </a>
+        </Link>
+        <Link href={"/form/steg6"}>
+          <a className={link.next}>
+            Nästa <img src={nextStep.src} />
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
