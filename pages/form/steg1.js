@@ -10,6 +10,7 @@ import logo from "../../assets/logo.svg";
 import Buttons from "../../components/Buttons";
 import Sidebar from "../../components/sidebar";
 import LinksCompnent from "../../components/LinksCompnent";
+import FormWrapper from "../../components/FormWrapper";
 
 export default function RentalType() {
   const formKey = "rentalType";
@@ -27,7 +28,10 @@ export default function RentalType() {
     <div className={styles.container}>
       <Sidebar />
 
-      <div>
+      <FormWrapper
+        title="Hur vill du hyra ut?"
+        description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
+      >
         <form className={styles.form}>
           <div className={styles.cards}>
             <div className={styles.card}>
@@ -83,7 +87,7 @@ export default function RentalType() {
         </form>
 
         <LinksCompnent back="/login" next="steg2" />
-      </div>
+      </FormWrapper>
     </div>
   );
 }
