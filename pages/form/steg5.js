@@ -1,12 +1,33 @@
 import { useState } from "react";
 import Link from "next/link";
 import link from "../../styles/form/formLinks.module.scss";
-import nextStep from "../../assets/next.svg";
-import prevStep from "../../assets/prev.svg";
+import styles from "../../styles/form/steg5.module.scss";
+import Sidebar from "../../components/sidebar";
+import LinksCompnent from "../../components/LinksCompnent";
+import FormWrapper from "../../components/FormWrapper";
 
 export default function comfort() {
   const [checked, setChecked] = useState([]);
-  const comforts = ["Badkar", "Balkong/uteplats", "Cykelrum", "Diskmaskin"];
+  const comforts = [
+    "Badkar",
+    "Balkong/uteplats",
+    "Cykelrum",
+    "Diskmaskin",
+    "Egen Bastu",
+    "Egen dusch",
+    "Egen toalett",
+    "förråd",
+    "Gemensam tvättstuga",
+    "Hiss",
+    "Husdjur tillåtet",
+    "Internet",
+    "Parkering ingår",
+    "Rökning tillåten",
+    "Torktumlare",
+    "Tvättmaskin",
+    "Återvinningsrum",
+    "Möblerat",
+  ];
 
   const handleCheck = (event) => {
     var updatedList = [...checked];
@@ -26,32 +47,29 @@ export default function comfort() {
   console.log(checkedItems);
 
   return (
-    <div>
-      {comforts.map((item, index) => (
-        <div key={index}>
-          <input
-            id={item}
-            value={item}
-            type="checkbox"
-            onChange={handleCheck}
-            name="checkbox"
-          />
-          <label htmlFor="checkbox">{item}</label>
+    <div className={styles.container}>
+      <Sidebar />
+
+      <FormWrapper
+        title="Några bekvämligheter?"
+        description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
+      >
+        <div className={styles.wrapper}>
+          {comforts.map((item, index) => (
+            <div key={index}>
+              <input
+                id={item}
+                value={item}
+                type="checkbox"
+                onChange={handleCheck}
+                name="checkbox"
+              />
+              <label htmlFor="checkbox">{item}</label>
+            </div>
+          ))}
         </div>
-      ))}
-      <div className={link.links}>
-        <Link href={"/form/steg4"}>
-          <a className={link.prev}>
-            <img src={prevStep.src} />
-            Gå Tillbaka
-          </a>
-        </Link>
-        <Link href={"/form/steg6"}>
-          <a className={link.next}>
-            Nästa <img src={nextStep.src} />
-          </a>
-        </Link>
-      </div>
+        <LinksCompnent back="/login" next="steg2" />
+      </FormWrapper>
     </div>
   );
 }
