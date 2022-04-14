@@ -5,6 +5,7 @@ import AppContext from "../../components/AppContext";
 import { useContext } from "react";
 import nextStep from "../../assets/next.svg";
 import prevStep from "../../assets/prev.svg";
+import LinksCompnent from "../../components/LinksCompnent";
 
 export default function HouseType() {
   const formKey = "houseType";
@@ -43,19 +44,7 @@ export default function HouseType() {
           </div>
         </div>
       </form>
-      <div className={link.links}>
-        <Link href={"/form/steg1"}>
-          <a className={link.prev}>
-            <img src={prevStep.src} />
-            Gå Tillbaka
-          </a>
-        </Link>
-        <Link href={"/form/steg3"}>
-          <a className={link.next}>
-            Nästa <img src={nextStep.src} />
-          </a>
-        </Link>
-      </div>
+      <LinksCompnent next="steg3" back="steg2" />
     </div>
   );
 }
