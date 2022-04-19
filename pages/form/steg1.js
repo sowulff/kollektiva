@@ -8,7 +8,7 @@ import bedIcon from "../../assets/steg1/bedIcon.svg";
 import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
 import logo from "../../assets/logo.svg";
 import Sidebar from "../../components/sidebar";
-import LinksCompnent from "../../components/LinksCompnent";
+import FormWrapper from "../../components/FormWrapper";
 
 export default function RentalType() {
   const formKey = "rentalType";
@@ -16,8 +16,15 @@ export default function RentalType() {
   const state = useContext(AppContext);
 
   let { formData } = state.state;
-
+  const [lastChecked, setLastChecked] = useState(null);
   const handleFormData = (input) => (e) => {
+    const currChecked = e.target.parentNode.parentNode;
+    currChecked.dataset.active = true;
+    
+    if (lastChecked) lastChecked.dataset.active = false;
+    setLastChecked(currChecked);  
+    
+
     const { value } = e.target;
     state.setFormData({ ...formData, [input]: value });
   };
@@ -26,8 +33,13 @@ export default function RentalType() {
     <div className={styles.container}>
       <Sidebar />
 
-      <div>
-        <form className={styles.form}>
+      <FormWrapper
+        title="Hur vill du hyra ut?"
+        description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
+        next="steg2"
+        prev="login"
+      >
+        <form>
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
@@ -80,9 +92,7 @@ export default function RentalType() {
             </div>
           </div>
         </form>
-
-        <LinksCompnent back="/login" next="steg2" />
-      </div>
+      </FormWrapper>
     </div>
   );
 }

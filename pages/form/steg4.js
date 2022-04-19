@@ -1,6 +1,9 @@
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
+import Sidebar from "../../components/Sidebar";
+import FormWrapper from "../../components/FormWrapper.js";
 
+import styles from "../../styles/form/steg4.module.scss";
 export default function Images() {
   const formKey = "images";
   const state = useContext(AppContext);
@@ -9,8 +12,14 @@ export default function Images() {
 
   console.log(formData);
   return (
-    <div>
-      <h3>Lägg till bilder på din bostad</h3>
+    <div className={styles.container}>
+      <Sidebar />
+      <FormWrapper
+        title="info"
+        description="test"
+        next="steg5"
+        prev="steg3"
+      ></FormWrapper>
     </div>
   );
 }

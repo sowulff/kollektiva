@@ -1,6 +1,6 @@
 import { supabase } from "../utils/supabaseClient";
 import Link from "next/link";
-import styles from "../styles/Home.module.scss";
+// import styles from "../styles/Home.module.scss";
 
 function HomePage() {
   return (
@@ -8,7 +8,7 @@ function HomePage() {
       <h1>Kollektiva</h1>
       <h3>VI MATCHAR DIG MED DINA FRAMTIDA FAVORITER</h3>
       <Link href="/new/instructions" replace>
-        <button className={styles.button}>lägg upp boende</button>
+        <button>lägg upp boende</button>
       </Link>
     </div>
   );
