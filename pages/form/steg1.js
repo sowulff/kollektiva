@@ -7,7 +7,7 @@ import houseIcon from "../../assets/steg1/houseIcon.svg";
 import bedIcon from "../../assets/steg1/bedIcon.svg";
 import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
 import logo from "../../assets/logo.svg";
-import Buttons from "../../components/Buttons";
+
 import Sidebar from "../../components/sidebar";
 import FormWrapper from "../../components/FormWrapper";
 

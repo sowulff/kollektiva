@@ -1,3 +1,5 @@
+import next from "next";
+import React, { useState } from "react";
 import styles from "../../styles/form/steg2.module.scss";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
@@ -25,7 +27,7 @@ export default function HouseType() {
       >
         <form className={styles.form} onSubmit={submitFormData}>
           <div>
-            <div>
+            <div className={styles.button}>
               <input
                 type="radio"
                 name="house"
@@ -35,7 +37,7 @@ export default function HouseType() {
               ></input>
               <label htmlFor="total">Villa</label>
             </div>
-            <div>
+            <div className={styles.button}>
               <input
                 type="radio"
                 name="house"
@@ -47,7 +49,7 @@ export default function HouseType() {
             </div>
           </div>
         </form>
-      </FormWrapper>
+        </FormWrapper>
     </div>
   );
 }
