@@ -16,8 +16,15 @@ export default function RentalType() {
   const state = useContext(AppContext);
 
   let { formData } = state.state;
-
+  const [lastChecked, setLastChecked] = useState(null);
   const handleFormData = (input) => (e) => {
+    const currChecked = e.target.parentNode.parentNode;
+    currChecked.dataset.active = true;
+    
+    if (lastChecked) lastChecked.dataset.active = false;
+    setLastChecked(currChecked);  
+    
+
     const { value } = e.target;
     state.setFormData({ ...formData, [input]: value });
   };

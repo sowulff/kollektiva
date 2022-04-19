@@ -1,6 +1,7 @@
 @import "../variables.scss";
 @import "./components/container.scss";
 .cards {
+  justify-content:center;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -19,8 +20,16 @@
   width: 15%;
   border-radius: 8px;
   @media screen and (min-width: $tablet) {
-    width: 33%;
+    width: 30%;
     text-align: center;
+  }
+
+  //när klickad
+  &[data-active="true"] {
+    background-color:black;
+    img {
+      filter:hue-rotate(90deg);
+    }
   }
   .wrapper {
     display: flex;
@@ -41,6 +50,7 @@
       }
     }
   }
+
   //button
   .button label,
   .button input {
@@ -53,6 +63,7 @@
     background: $darkOrange;
     color: #fbefe7;
   }
+
   .button input[type="radio"] + label {
     background: $lightOrange;
     color: $darkOrange;
