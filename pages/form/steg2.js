@@ -1,12 +1,15 @@
 import next from "next";
 import React, { useState } from "react";
-import styles from "../../styles/form/steg2.module.scss";
+
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-
 import Sidebar from "../../components/sidebar";
 import LinksCompnent from "../../components/LinksCompnent";
 import FormWrapper from "../../components/FormWrapper";
+import styles from "../../styles/form/steg1.module.scss";
+import houseIcon from "../../assets/steg1/houseIcon.svg";
+import lgh from "../../assets/steg1/lgh.svg";
+import twoHouseIcon from "../../assets/steg1/twoHouseIcon.svg";
 
 export default function HouseType() {
   const formKey = "houseType";
@@ -25,27 +28,99 @@ export default function HouseType() {
         title="Hur vill du hyra ut?"
         description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
       >
-        <form onSubmit={submitFormData}>
-          <div className={styles.container}>
-            <div className={styles.button}>
-              <input
-                type="radio"
-                name="house"
-                value="villa"
-                id="villa"
-                // onChange={handleFormData(formKey)}
-              ></input>
-              <label htmlFor="total">Villa</label>
+        <form className={styles.form}>
+          <div className={styles.cards}>
+            <div className={styles.card}>
+              <div className={styles.wrapper}>
+                <img src={houseIcon.src} />
+              </div>
+              <div className={styles.button}>
+                <input
+                  type="radio"
+                  name="name"
+                  id="total"
+                  value="Hela"
+                  // onChange={handleFormData(formKey)}
+                ></input>
+                <label htmlFor="total">Villa</label>
+              </div>
             </div>
-            <div className={styles.button}>
-              <input
-                type="radio"
-                name="house"
-                id="lgh"
-                value="lgh"
-                // onChange={handleFormData(formKey)}
-              ></input>
-              <label htmlFor="total">Lägenhet</label>
+            <div className={styles.card}>
+              <div className={styles.wrapper}>
+                <img src={lgh.src} />
+              </div>
+
+              <div className={styles.button}>
+                <input
+                  type="radio"
+                  name="name"
+                  id="part"
+                  value="halva"
+                  // onChange={handleFormData(formKey)}
+                ></input>
+                <label htmlFor="part">Lägenhet</label>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.wrapper}>
+                <img src={twoHouseIcon.src} />
+              </div>
+              <div className={styles.button}>
+                <input
+                  type="radio"
+                  name="name"
+                  id="change"
+                  value="byta"
+                  // onChange={handleFormData(formKey)}
+                ></input>
+                <label htmlFor="change">Radhus</label>
+              </div>
+            </div>
+
+            <div className={styles.card}>
+              <div className={styles.wrapper}>
+                <img src={houseIcon.src} />
+              </div>
+              <div className={styles.button}>
+                <input
+                  type="radio"
+                  name="name"
+                  id="total"
+                  value="Hela"
+                  // onChange={handleFormData(formKey)}
+                ></input>
+                <label htmlFor="total">Villa</label>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.wrapper}>
+                <img src={houseIcon.src} />
+              </div>
+              <div className={styles.button}>
+                <input
+                  type="radio"
+                  name="name"
+                  id="total"
+                  value="Hela"
+                  // onChange={handleFormData(formKey)}
+                ></input>
+                <label htmlFor="total">Villa</label>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.wrapper}>
+                <img src={houseIcon.src} />
+              </div>
+              <div className={styles.button}>
+                <input
+                  type="radio"
+                  name="name"
+                  id="total"
+                  value="Hela"
+                  // onChange={handleFormData(formKey)}
+                ></input>
+                <label htmlFor="total">Villa</label>
+              </div>
             </div>
           </div>
         </form>
