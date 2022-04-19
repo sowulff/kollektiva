@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import styles from "../../styles/form/steg5.module.scss";
 import Sidebar from "../../components/sidebar";
 
@@ -50,7 +49,7 @@ export default function comfort() {
       <Sidebar />
 
       <FormWrapper
-        title="Några bekvämligheter?"
+        title="Har du något mer du vill berätta?"
         description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
         next="steg6"
         prev="steg4"

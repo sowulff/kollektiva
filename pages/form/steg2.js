@@ -9,6 +9,8 @@ import styles from "../../styles/form/steg1.module.scss";
 import houseIcon from "../../assets/steg1/houseIcon.svg";
 import lgh from "../../assets/steg1/lgh.svg";
 import twoHouseIcon from "../../assets/steg1/twoHouseIcon.svg";
+import garageIcon from "../../assets/steg1/garageIcon.svg";
+import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
 
 export default function HouseType() {
   const formKey = "houseType";
@@ -95,7 +97,7 @@ export default function HouseType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <img src={garageIcon.src} />
               </div>
               <div className={styles.button}>
                 <input
@@ -105,12 +107,12 @@ export default function HouseType() {
                   value="Hela"
                   // onChange={handleFormData(formKey)}
                 ></input>
-                <label htmlFor="total">Villa</label>
+                <label htmlFor="total">Garage</label>
               </div>
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <img src={changeHouseIcon.src} />
               </div>
               <div className={styles.button}>
                 <input
