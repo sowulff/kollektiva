@@ -2,11 +2,9 @@ import { useState } from "react";
 import Link from "next/link";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-import link from "../../styles/form/formLinks.module.scss";
+import Sidebar from "../../components/Sidebar";
 import styles from "../../styles/form/steg3.module.scss";
-import nextStep from "../../assets/next.svg";
-import prevStep from "../../assets/prev.svg";
-import Sidebar from "../../components/sidebar";
+import FormWrapper from "../../components/FormWrapper.js";
 
 export default function HouseInfo() {
   const formKey = "houseInfo";
@@ -32,7 +30,12 @@ export default function HouseInfo() {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <div>
+      <FormWrapper
+        title="info"
+        description="test"
+        next="steg4"
+        prev="steg2"
+      >
         <form onInputCapture={handleFormData}>
           <div className={styles.wrapper}>
             <section className={styles.left}>
@@ -88,20 +91,7 @@ export default function HouseInfo() {
             </section>
           </div>
         </form>
-        <div className={link.links}>
-          <Link href={"/form/steg2"}>
-            <a className={link.prev}>
-              <img src={prevStep.src} />
-              Gå Tillbaka
-            </a>
-          </Link>
-          <Link href={"/form/steg4"}>
-            <a className={link.next}>
-              Nästa <img src={nextStep.src} />
-            </a>
-          </Link>
-        </div>
-      </div>
+      </FormWrapper>
     </div>
   );
 }
