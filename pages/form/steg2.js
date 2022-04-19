@@ -14,13 +14,23 @@ import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
 
 export default function HouseType() {
   const formKey = "houseType";
-  const value = useContext(AppContext);
-  let { formData } = value.state;
+  const state = useContext(AppContext);
+  let { formData } = state.state;
   console.log(formData);
-  const submitFormData = (e) => {
-    e.preventDefault();
-    // nextStep();
+  const [lastChecked, setLastChecked] = useState(null);
+  const handleFormData = (input) => (e) => {
+    const currChecked = e.target.parentNode.parentNode;
+    currChecked.dataset.active = true;
+    
+    if (lastChecked) lastChecked.dataset.active = false;
+    setLastChecked(currChecked);  
+    
+
+    const { value } = e.target;
+    state.setFormData({ ...formData, [input]: value });
   };
+
+
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -43,7 +53,7 @@ export default function HouseType() {
                   name="name"
                   id="total"
                   value="Hela"
-                  // onChange={handleFormData(formKey)}
+                  onChange={handleFormData(formKey)}
                 ></input>
                 <label htmlFor="total">Villa</label>
               </div>
@@ -59,7 +69,7 @@ export default function HouseType() {
                   name="name"
                   id="part"
                   value="halva"
-                  // onChange={handleFormData(formKey)}
+                  onChange={handleFormData(formKey)}
                 ></input>
                 <label htmlFor="part">Lägenhet</label>
               </div>
@@ -74,7 +84,7 @@ export default function HouseType() {
                   name="name"
                   id="change"
                   value="byta"
-                  // onChange={handleFormData(formKey)}
+                  onChange={handleFormData(formKey)}
                 ></input>
                 <label htmlFor="change">Radhus</label>
               </div>
@@ -90,7 +100,7 @@ export default function HouseType() {
                   name="name"
                   id="total"
                   value="Hela"
-                  // onChange={handleFormData(formKey)}
+                  onChange={handleFormData(formKey)}
                 ></input>
                 <label htmlFor="total">Villa</label>
               </div>
@@ -105,7 +115,7 @@ export default function HouseType() {
                   name="name"
                   id="total"
                   value="Hela"
-                  // onChange={handleFormData(formKey)}
+                  onChange={handleFormData(formKey)}
                 ></input>
                 <label htmlFor="total">Garage</label>
               </div>
@@ -120,7 +130,7 @@ export default function HouseType() {
                   name="name"
                   id="total"
                   value="Hela"
-                  // onChange={handleFormData(formKey)}
+                  onChange={handleFormData(formKey)}
                 ></input>
                 <label htmlFor="total">Villa</label>
               </div>
