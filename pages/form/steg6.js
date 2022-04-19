@@ -14,22 +14,7 @@ export default function comfort() {
         description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
         next="steg6"
         prev="steg4"
-      >
-        <div className={styles.wrapper}>
-          {comforts.map((item, index) => (
-            <div key={index}>
-              <input
-                id={item}
-                value={item}
-                type="checkbox"
-                onChange={handleCheck}
-                name="checkbox"
-              />
-              <label htmlFor="checkbox">{item}</label>
-            </div>
-          ))}
-        </div>
-      </FormWrapper>
+      ></FormWrapper>
     </div>
   );
 }
