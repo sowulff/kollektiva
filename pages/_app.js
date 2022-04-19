@@ -3,7 +3,7 @@ import { supabase } from "../utils/supabaseClient";
 import AppContext from "../components/AppContext";
 import "../styles/globals.scss";
 
-export default function ({ Component, pageProps }) {
+function Kollektiva({ Component, pageProps }) {
   const [session, setSession] = useState(null);
 
   useEffect(() => {
@@ -28,3 +28,5 @@ export default function ({ Component, pageProps }) {
     </AppContext.Provider>
   );
 }
+
+export default Kollektiva;
