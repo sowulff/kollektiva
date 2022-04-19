@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
 import Sidebar from "../../components/sidebar";
-import LinksCompnent from "../../components/LinksCompnent";
 import FormWrapper from "../../components/FormWrapper";
 import styles from "../../styles/form/steg1.module.scss";
 import houseIcon from "../../assets/steg1/houseIcon.svg";
@@ -25,8 +24,10 @@ export default function HouseType() {
       <Sidebar />
 
       <FormWrapper
-        title="Hur vill du hyra ut?"
+        title="Vad för bostadstyp vill du hyra ut?"
         description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
+        next="steg3"
+        prev="steg1"
       >
         <form className={styles.form}>
           <div className={styles.cards}>
@@ -124,7 +125,6 @@ export default function HouseType() {
             </div>
           </div>
         </form>
-        <LinksCompnent next="steg3" back="steg1" />
       </FormWrapper>
     </div>
   );
