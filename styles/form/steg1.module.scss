@@ -15,11 +15,12 @@
   background-color: $lightOrange;
   display: flex;
   align-items: end;
-  padding: 16px 32px;
+  padding: 0px 0px 0.5rem 0.5rem;
   width: 100%;
   border-radius: 8px;
 
   @media screen and (min-width: $tablet) {
+    padding: 16px 32px;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;

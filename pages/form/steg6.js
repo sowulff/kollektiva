@@ -15,7 +15,7 @@ export default function step6() {
         next="steg6"
         prev="steg4"
       >
-        <div>
+        <div className={styles.info}>
           <h3>Tänk på att beskriva:</h3>
           <ul>
             <li>Avstånd till centrum</li>
@@ -25,7 +25,9 @@ export default function step6() {
           </ul>
           <div className={styles.textarea}>
             <label for="textarea">Beskrivning:</label>
-            <textarea id="textarea" name="textarea" rows="5"></textarea>
+            <textarea id="textarea" name="textarea" rows="5">
+              Beskriv här
+            </textarea>
           </div>
         </div>
       </FormWrapper>

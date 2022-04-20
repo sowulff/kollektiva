@@ -31,4 +31,12 @@
   p {
     color: #5c5653;
   }
+  .logoFooter {
+    display: flex;
+    justify-content: right;
+    padding: 2rem 1rem;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
 }
