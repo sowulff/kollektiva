@@ -19,9 +19,9 @@
   padding: 16px 32px;
   width: 100%;
   border-radius: 8px;
+
   @media screen and (min-width: $tablet) {
     width: 25%;
-
     text-align: center;
   }
 
@@ -43,6 +43,7 @@
     h4 {
       margin: 1.5rem 0;
       color: #125956;
+      font-size: 16px;
     }
     img {
       width: 2.5rem;

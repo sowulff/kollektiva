@@ -14,9 +14,6 @@ export default function step6() {
         description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
         next="steg6"
         prev="steg4"
-<<<<<<< Updated upstream
-      ></FormWrapper>
-=======
       >
         <div>
           <h3>Tänk på att beskriva:</h3>
@@ -32,7 +29,6 @@ export default function step6() {
           </div>
         </div>
       </FormWrapper>
->>>>>>> Stashed changes
     </div>
   );
 }

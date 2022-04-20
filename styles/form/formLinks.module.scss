@@ -2,9 +2,12 @@
 .links {
   margin: 1rem 2rem;
   display: flex;
+  flex-direction: column-reverse;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+  }
   gap: 1rem;
   justify-content: flex-end;
-
   a {
     border-radius: 64px;
     padding: 8px 24px;
