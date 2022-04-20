@@ -1,8 +1,21 @@
+@import "../../variables.scss";
 .container {
-    padding:0 2rem;
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    height: 100%;
-    // overflow-y:scroll;
-    width: 100%;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  height: 100%;
+  align-items: center;
+  // overflow-y:scroll;
+  width: 100%;
+  h1 {
+    color: $purpleText;
+  }
+  p {
+    color: #5c5653;
+  }
+  img {
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
 }

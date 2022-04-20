@@ -6,44 +6,56 @@
   flex-direction: column;
   gap: 2rem;
   flex-wrap: wrap;
+
   @media screen and (min-width: $tablet) {
     flex-direction: row;
   }
 }
 .card {
-  background-color: #f7f5f4;
+  background-color: $lightOrange;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  align-items: end;
   padding: 16px 32px;
   width: 100%;
   border-radius: 8px;
 
   @media screen and (min-width: $tablet) {
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
     width: 25%;
     text-align: center;
+    background-color: #f7f5f4;
   }
 
   //när klickad
   &[data-active="true"] {
-    background-color: black;
+    background-color: #ce7540;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 3px 1px rgba(0, 0, 0, 0.12),
+      0px 1px 5px rgba(0, 0, 0, 0.2);
     img {
       filter: hue-rotate(90deg);
+    }
+    @media screen and (min-width: $tablet) {
+      background-color: #f7f5f4;
     }
   }
   .wrapper {
     display: flex;
-    width: 90%;
+    // width: 90%;
     gap: 1.5rem;
     font-size: 24px;
     @media screen and (min-width: $tablet) {
       display: block;
     }
     h4 {
-      margin: 1.5rem 0;
-      color: #125956;
+      color: $purpleText;
       font-size: 16px;
+      display: none;
+      @media screen and (min-width: $tablet) {
+        display: block;
+        font-size: 24px;
+      }
     }
     img {
       width: 2.5rem;
@@ -62,7 +74,7 @@
     opacity: 0;
   }
   .button input[type="radio"]:checked + label {
-    background: $darkOrange;
+    background: #ce7540;
     color: #fbefe7;
   }
 
@@ -70,7 +82,7 @@
     background: $lightOrange;
     color: $darkOrange;
     padding: 8px 24px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
   }
 
