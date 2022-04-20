@@ -1,10 +1,10 @@
 import { useState } from "react";
-import styles from "../../styles/form/steg5.module.scss";
+import styles from "../../styles/form/steg6.module.scss";
 import Sidebar from "../../components/sidebar";
 
 import FormWrapper from "../../components/FormWrapper";
 
-export default function comfort() {
+export default function step6() {
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -14,7 +14,25 @@ export default function comfort() {
         description="Fyll i fälten nedan, tryck på frågetecknet till vänster om du behöver hjälp!"
         next="steg6"
         prev="steg4"
+<<<<<<< Updated upstream
       ></FormWrapper>
+=======
+      >
+        <div>
+          <h3>Tänk på att beskriva:</h3>
+          <ul>
+            <li>Avstånd till centrum</li>
+            <li>Kollektivtrafiken</li>
+            <li>Mataffär</li>
+            <li>Övriga förmåner</li>
+          </ul>
+          <div className={styles.textarea}>
+            <label for="textarea">Beskrivning:</label>
+            <textarea id="textarea" name="textarea" rows="5"></textarea>
+          </div>
+        </div>
+      </FormWrapper>
+>>>>>>> Stashed changes
     </div>
   );
 }

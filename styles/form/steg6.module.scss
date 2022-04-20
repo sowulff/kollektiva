@@ -1,0 +1,8 @@
+@import "./components/container.scss";
+@import "../variables.scss";
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
