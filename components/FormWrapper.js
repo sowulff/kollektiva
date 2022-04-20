@@ -4,7 +4,7 @@ import logoMobile from "../assets/logoMobile.svg";
 const FormWrapper = ({ title, description, children, next, prev }) => {
   return (
     <div className={style.container}>
-      <div>
+      <div className={style.header}>
         <img src={logoMobile.src} />
         <h1>{title}</h1>
         <p>{description}</p>

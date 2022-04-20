@@ -7,15 +7,28 @@
   align-items: center;
   // overflow-y:scroll;
   width: 100%;
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      text-align: start;
+    }
+    img {
+      @media screen and (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
   h1 {
     color: $purpleText;
   }
   p {
     color: #5c5653;
   }
-  //   img {
-  //     @media screen and (min-width: $tablet) {
-  //       display: none;
-  //     }
-  //   }
 }
