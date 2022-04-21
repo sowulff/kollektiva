@@ -7,7 +7,7 @@ import FormWrapper from "../../components/FormWrapper";
 
 export default function comfort() {
   const [checked, setChecked] = useState([]);
-  const comforts = [
+  const Comforts = [
     "Badkar",
     "Balkong/uteplats",
     "Cykelrum",
@@ -57,7 +57,7 @@ export default function comfort() {
       >
         <h3 className={styles.heading}>Bekvämligheter</h3>
         <div className={styles.wrapper}>
-          {comforts.map((item, index) => (
+          {Comforts.map((item, index) => (
             <div key={index} className={styles.flex}>
               <input
                 id={item}

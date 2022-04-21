@@ -24,7 +24,7 @@ export default function step6() {
             <li>Övriga förmåner</li>
           </ul>
           <div className={styles.textarea}>
-            <label for="textarea">Beskrivning:</label>
+            <label htmlFor="textarea">Beskrivning:</label>
             <textarea id="textarea" name="textarea" rows="10">
               Beskriv här
             </textarea>
