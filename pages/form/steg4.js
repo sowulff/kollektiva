@@ -25,7 +25,7 @@ export default function Images() {
     }
     console.log(uploadedImages);
     state.setFormData({ ...formData, ...uploadedImages });
-  }, [image]);
+  }, [image, state, formData]);
   return (
     <div className={styles.container}>
       <Sidebar mainStep={3} currentSubStep={3} />
