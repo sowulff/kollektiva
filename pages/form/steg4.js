@@ -38,7 +38,12 @@ export default function Images() {
         <form className={styles.main}>
           <label htmlFor="images" className={styles.inputLabel}>
             <div>
-              <img src={UploadICon.src} />
+              <Image
+                src={UploadICon.src}
+                width="50"
+                height="50"
+                className={styles.img}
+              />
               <p>Dra in dina bilder här</p>
               <p>Välj från enhet</p>
             </div>
