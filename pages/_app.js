@@ -1,19 +1,9 @@
 import { useState, useEffect } from "react";
-import { supabase } from "../utils/supabaseClient";
+
 import AppContext from "../components/AppContext";
 import "../styles/globals.scss";
 
 function Kollektiva({ Component, pageProps }) {
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    setSession(supabase.auth.session());
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-  }, []);
-
   const [formData, setFormData] = useState({});
   return (
     <AppContext.Provider
@@ -24,7 +14,7 @@ function Kollektiva({ Component, pageProps }) {
         setFormData: setFormData,
       }}
     >
-      <Component {...pageProps} session={session} />
+      <Component {...pageProps} />
     </AppContext.Provider>
   );
 }
