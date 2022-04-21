@@ -10,13 +10,14 @@ export default function Links({ next, back }) {
     <div className={link.links}>
       <Link href={linkPrefix + back}>
         <a className={link.prev}>
-          <Image src={prevStep.src} width="15" height="15" />
+          <Image src={prevStep.src} width="15" height="15" alt="next step" />
           Gå Tillbaka
         </a>
       </Link>
       <Link href={linkPrefix + next}>
         <a className={link.next}>
-          Nästa <Image src={nextStep.src} width="15" height="15" />
+          Nästa{" "}
+          <Image src={nextStep.src} width="15" height="15" alt="prev step" />
         </a>
       </Link>
     </div>
