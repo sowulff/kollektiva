@@ -6,11 +6,11 @@ import { useContext } from "react";
 import Sidebar from "../../components/sidebar";
 import FormWrapper from "../../components/FormWrapper";
 import styles from "../../styles/form/steg1.module.scss";
-import houseIcon from "../../assets/steg1/houseIcon.svg";
-import lgh from "../../assets/steg1/lgh.svg";
-import twoHouseIcon from "../../assets/steg1/twoHouseIcon.svg";
-import garageIcon from "../../assets/steg1/garageIcon.svg";
-import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
+import HouseIcon from "../../assets/steg1/HouseIcon";
+import Lgh from "../../assets/steg1/Lgh";
+import ChangeHouseIcon from "../../assets/steg1/ChangeHouseIcon.js";
+import GarageIcon from "../../assets/steg1/GarageIcon.js";
+import TwoHouseIcon from "../../assets/steg1/TwoHouseIcon.js";
 
 export default function HouseType() {
   const formKey = "houseType";
@@ -21,15 +21,13 @@ export default function HouseType() {
   const handleFormData = (input) => (e) => {
     const currChecked = e.target.parentNode.parentNode;
     currChecked.dataset.active = true;
-    
+
     if (lastChecked) lastChecked.dataset.active = false;
-    setLastChecked(currChecked);  
-    
+    setLastChecked(currChecked);
 
     const { value } = e.target;
     state.setFormData({ ...formData, [input]: value });
   };
-
 
   return (
     <div className={styles.container}>
@@ -45,7 +43,7 @@ export default function HouseType() {
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <HouseIcon className={styles.icon} />
               </div>
               <div className={styles.button}>
                 <input
@@ -60,7 +58,7 @@ export default function HouseType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={lgh.src} />
+                <Lgh className={styles.icon} />
               </div>
 
               <div className={styles.button}>
@@ -76,7 +74,7 @@ export default function HouseType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={twoHouseIcon.src} />
+                <TwoHouseIcon className={styles.icon} />
               </div>
               <div className={styles.button}>
                 <input
@@ -92,47 +90,47 @@ export default function HouseType() {
 
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <HouseIcon className={styles.icon} />
               </div>
               <div className={styles.button}>
                 <input
                   type="radio"
                   name="name"
-                  id="total"
-                  value="Hela"
+                  id="small"
+                  value="fritid"
                   onChange={handleFormData(formKey)}
                 ></input>
-                <label htmlFor="total">Villa</label>
+                <label htmlFor="small">Fritidsboende</label>
               </div>
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={garageIcon.src} />
+                <GarageIcon className={styles.icon} />
               </div>
               <div className={styles.button}>
                 <input
                   type="radio"
                   name="name"
-                  id="total"
-                  value="Hela"
+                  id="garage"
+                  value="garage"
                   onChange={handleFormData(formKey)}
                 ></input>
-                <label htmlFor="total">Garage</label>
+                <label htmlFor="garage">Garage</label>
               </div>
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={changeHouseIcon.src} />
+                <ChangeHouseIcon className={styles.icon} />
               </div>
               <div className={styles.button}>
                 <input
                   type="radio"
                   name="name"
-                  id="total"
-                  value="Hela"
+                  id="other"
+                  value="other"
                   onChange={handleFormData(formKey)}
                 ></input>
-                <label htmlFor="total">Villa</label>
+                <label htmlFor="other">Övrigt</label>
               </div>
             </div>
           </div>

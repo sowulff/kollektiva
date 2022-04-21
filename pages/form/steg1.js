@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import styles from "../../styles/form/steg1.module.scss";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-import houseIcon from "../../assets/steg1/houseIcon.svg";
-import bedIcon from "../../assets/steg1/bedIcon.svg";
-import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
+import HouseIcon from "../../assets/steg1/HouseIcon";
+import BedIcon from "../../assets/steg1/BedIcon";
+import ChangeHouseIcon from "../../assets/steg1/ChangeHouseIcon";
 import logo from "../../assets/logo.svg";
 import Sidebar from "../../components/sidebar";
 import FormWrapper from "../../components/FormWrapper";
@@ -30,7 +30,7 @@ export default function RentalType() {
 
   return (
     <div className={styles.container}>
-      <Sidebar step={1} substep={1} />
+      <Sidebar step={2} substep={1} />
 
       <FormWrapper
         title="Hur vill du hyra ut?"
@@ -42,7 +42,7 @@ export default function RentalType() {
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <HouseIcon className={styles.icon} />
                 <h4>Hyra ut hela bostaden</h4>
               </div>
               <div className={styles.button}>
@@ -58,7 +58,7 @@ export default function RentalType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={bedIcon.src} />
+                <BedIcon className={styles.icon} />
                 <h4>Hyra ut delar av bostaden</h4>
               </div>
 
@@ -75,7 +75,7 @@ export default function RentalType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={changeHouseIcon.src} />
+                <ChangeHouseIcon className={styles.icon} />
                 <h4>Byta bostad</h4>
               </div>
               <div className={styles.button}>
