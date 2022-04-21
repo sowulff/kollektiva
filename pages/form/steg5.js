@@ -2,11 +2,11 @@ import { useContext, useState, useEffect } from "react";
 import AppContext from "../../components/AppContext";
 import styles from "../../styles/form/steg5.module.scss";
 import Sidebar from "../../components/sidebar";
-
+import react from "react";
 import FormWrapper from "../../components/FormWrapper";
 
-export default function comfort() {
-  const [checked, setChecked] = useState([]);
+export default function Comfort() {
+  const [useChecked, setChecked] = useState([]);
   const state = useContext(AppContext);
   let { formData } = state.state;
   console.log(formData);
