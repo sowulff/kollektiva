@@ -28,7 +28,7 @@ export default function HouseInfo() {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
+      <Sidebar mainStep={3} currentSubStep={3} />
       <FormWrapper
         title="Berätta om din bostad"
         description="Fyll i fälten för den övriga informationen som vi behöver till din bostad."

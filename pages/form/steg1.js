@@ -30,7 +30,7 @@ export default function RentalType() {
 
   return (
     <div className={styles.container}>
-      <Sidebar step={1} substep={1} />
+      <Sidebar step={2} substep={1} />
 
       <FormWrapper
         title="Hur vill du hyra ut?"
@@ -42,7 +42,7 @@ export default function RentalType() {
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <HouseIcon fill="red" className={styles.icon} />
+                <HouseIcon fill="red" />
                 <h4>Hyra ut hela bostaden</h4>
               </div>
               <div className={styles.button}>

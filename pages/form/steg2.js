@@ -100,7 +100,7 @@ export default function HouseType() {
                   value="Hela"
                   onChange={handleFormData(formKey)}
                 ></input>
-                <label htmlFor="total">Villa</label>
+                <label htmlFor="total">Fritidsboende</label>
               </div>
             </div>
             <div className={styles.card}>
@@ -130,7 +130,7 @@ export default function HouseType() {
                   value="Hela"
                   onChange={handleFormData(formKey)}
                 ></input>
-                <label htmlFor="total">Villa</label>
+                <label htmlFor="total">Övrigt</label>
               </div>
             </div>
           </div>
