@@ -6,7 +6,6 @@
   flex-direction: column;
   gap: 2rem;
   flex-wrap: wrap;
-
   @media screen and (min-width: $tablet) {
     flex-direction: row;
   }
@@ -24,9 +23,13 @@
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    width: 25%;
+    aspect-ratio: 1/1;
+    width: 30%;
     text-align: center;
     background-color: #f7f5f4;
+  }
+  @media screen and (min-width: $desktop) {
+    aspect-ratio: 2/1;
   }
 
   //när klickad

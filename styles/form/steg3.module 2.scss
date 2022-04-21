@@ -1,0 +1,44 @@
+@import "./components/container.scss";
+
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    .couple {
+      display: flex;
+      flex-direction: row;
+    }
+    .stairs {
+      width: 50%;
+      margin-top: 1rem;
+    }
+    .radio {
+      display: flex;
+      flex-direction: row;
+      input {
+        width: 1rem;
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+      input {
+        padding: 1rem;
+        border: 1px solid #667080;
+        border-radius: 6px;
+        width: 100%;
+      }
+    }
+  }
+}
