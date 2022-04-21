@@ -4,8 +4,8 @@ import styles from "../../styles/form/steg1.module.scss";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
 import HouseIcon from "../../assets/steg1/HouseIcon";
-import bedIcon from "../../assets/steg1/bedIcon.svg";
-import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
+import BedIcon from "../../assets/steg1/BedIcon";
+import ChangeHouseIcon from "../../assets/steg1/ChangeHouseIcon";
 import logo from "../../assets/logo.svg";
 import Sidebar from "../../components/sidebar";
 import FormWrapper from "../../components/FormWrapper";
@@ -42,7 +42,7 @@ export default function RentalType() {
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <HouseIcon fill="red" />
+                <HouseIcon className={styles.icon} />
                 <h4>Hyra ut hela bostaden</h4>
               </div>
               <div className={styles.button}>
@@ -58,7 +58,7 @@ export default function RentalType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={bedIcon.src} />
+                <BedIcon className={styles.icon} />
                 <h4>Hyra ut delar av bostaden</h4>
               </div>
 
@@ -75,7 +75,7 @@ export default function RentalType() {
             </div>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={changeHouseIcon.src} />
+                <ChangeHouseIcon className={styles.icon} />
                 <h4>Byta bostad</h4>
               </div>
               <div className={styles.button}>
