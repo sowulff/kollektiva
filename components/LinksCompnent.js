@@ -2,6 +2,7 @@ import Link from "next/link";
 import link from "../styles/form/formLinks.module.scss";
 import nextStep from "../assets/next.svg";
 import prevStep from "../assets/prev.svg";
+import Image from "next/image";
 
 export default function Links({ next, back }) {
   const linkPrefix = "/form/";
@@ -9,13 +10,13 @@ export default function Links({ next, back }) {
     <div className={link.links}>
       <Link href={linkPrefix + back}>
         <a className={link.prev}>
-          <img src={prevStep.src} />
+          <Image src={prevStep.src} width="15" height="15" />
           Gå Tillbaka
         </a>
       </Link>
       <Link href={linkPrefix + next}>
         <a className={link.next}>
-          Nästa <img src={nextStep.src} />
+          Nästa <Image src={nextStep.src} width="15" height="15" />
         </a>
       </Link>
     </div>
