@@ -1,6 +1,6 @@
 import AppContext from "../../components/AppContext";
 import { useContext, useState, useEffect } from "react";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar.js";
 import FormWrapper from "../../components/FormWrapper.js";
 import UploadICon from "../../assets/steg4/upload_arrow.svg";
 import styles from "../../styles/form/steg4.module.scss";

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/Sidebar.js";
 import FormWrapper from "../../components/FormWrapper";
 import styles from "../../styles/form/steg1.module.scss";
 import HouseIcon from "../../assets/steg1/HouseIcon";
