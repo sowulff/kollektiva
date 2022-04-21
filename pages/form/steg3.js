@@ -29,7 +29,12 @@ export default function HouseInfo() {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <FormWrapper title="info" description="test" next="steg4" prev="steg2">
+      <FormWrapper
+        title="Berätta om din bostad"
+        description="Fyll i fälten för den övriga informationen som vi behöver till din bostad."
+        next="steg4"
+        prev="steg2"
+      >
         <form onInputCapture={handleFormData}>
           <div className={styles.wrapper}>
             <section className={styles.left}>

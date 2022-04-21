@@ -3,21 +3,23 @@
 .container {
   display: none;
 }
-@media screen and (min-width: $tablet) {
-  .container {
-    display:block;
-    width: 100%;
-    height: 100vh;
-    height: 100%;
-    background-color: #599895;
-    position: relative;
 
-    .logo {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+@media screen and (min-width: $tablet) {
+   
+.container {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  background-color: #599895;
+  position: relative;
+
+
+  .logo {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .steps {
@@ -164,3 +166,5 @@
     }
   }
 }
+}
+

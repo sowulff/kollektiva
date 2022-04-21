@@ -1,8 +1,43 @@
+@import "../../variables.scss";
 .container {
-    padding:0 2rem;
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    height: 100%;
-    // overflow-y:scroll;
-    width: 100%;
+  margin: 0;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  height: 100%;
+  align-items: center;
+  // overflow-y:scroll;
+  width: 100%;
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      text-align: start;
+    }
+    img {
+      @media screen and (min-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
+  h1 {
+    color: $purpleText;
+  }
+  p {
+    color: #5c5653;
+  }
+  .logoFooter {
+    display: flex;
+    justify-content: right;
+    padding: 2rem 1rem;
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
 }

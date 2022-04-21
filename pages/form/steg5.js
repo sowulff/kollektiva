@@ -55,9 +55,10 @@ export default function comfort() {
         next="steg6"
         prev="steg4"
       >
+        <h3 className={styles.heading}>Bekvämligheter</h3>
         <div className={styles.wrapper}>
           {comforts.map((item, index) => (
-            <div key={index}>
+            <div key={index} className={styles.flex}>
               <input
                 id={item}
                 value={item}

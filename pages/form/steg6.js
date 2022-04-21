@@ -1,10 +1,10 @@
 import { useState } from "react";
-import styles from "../../styles/form/steg5.module.scss";
+import styles from "../../styles/form/steg6.module.scss";
 import Sidebar from "../../components/sidebar";
 
 import FormWrapper from "../../components/FormWrapper";
 
-export default function comfort() {
+export default function step6() {
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -15,19 +15,20 @@ export default function comfort() {
         next="steg6"
         prev="steg4"
       >
-        <div className={styles.wrapper}>
-          {comforts.map((item, index) => (
-            <div key={index}>
-              <input
-                id={item}
-                value={item}
-                type="checkbox"
-                onChange={handleCheck}
-                name="checkbox"
-              />
-              <label htmlFor="checkbox">{item}</label>
-            </div>
-          ))}
+        <div className={styles.info}>
+          <h3>Tänk på att beskriva:</h3>
+          <ul>
+            <li>Avstånd till centrum</li>
+            <li>Kollektivtrafiken</li>
+            <li>Mataffär</li>
+            <li>Övriga förmåner</li>
+          </ul>
+          <div className={styles.textarea}>
+            <label for="textarea">Beskrivning:</label>
+            <textarea id="textarea" name="textarea" rows="5">
+              Beskriv här
+            </textarea>
+          </div>
         </div>
       </FormWrapper>
     </div>
