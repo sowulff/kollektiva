@@ -81,7 +81,7 @@ const UploadedImage = ({ file }) => {
           src={TrashIcon.src}
           width="30"
           height="30"
-          alt="upload icon"
+          alt="trash icon"
           className={styles.img}
         />
       </button>

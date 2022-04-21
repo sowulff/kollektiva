@@ -51,7 +51,12 @@ export default () => {
         publish={true}
       >
         <div className={styles.completed}>
-          <Image src={image} width="300" height="150"></Image>
+          <Image
+            src={image}
+            alt="house preview"
+            width="300"
+            height="150"
+          ></Image>
           <div>
             <h2>{adress}</h2>
             <h3>{price}:-/mån</h3>
