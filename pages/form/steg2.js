@@ -11,7 +11,7 @@ import Lgh from "../../assets/steg1/Lgh";
 import ChangeHouseIcon from "../../assets/steg1/ChangeHouseIcon.js";
 import GarageIcon from "../../assets/steg1/GarageIcon.js";
 import TwoHouseIcon from "../../assets/steg1/TwoHouseIcon.js";
-
+import react from "react";
 export default function HouseType() {
   const formKey = "houseType";
   const state = useContext(AppContext);

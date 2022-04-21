@@ -4,7 +4,7 @@ import { useContext } from "react";
 import Sidebar from "../../components/Sidebar.js";
 import styles from "../../styles/form/steg3.module.scss";
 import FormWrapper from "../../components/FormWrapper.js";
-
+import react from "react";
 export default function HouseInfo() {
   const formKey = "houseInfo";
   const state = useContext(AppContext);

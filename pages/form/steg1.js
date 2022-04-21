@@ -1,5 +1,5 @@
 import next from "next";
-import React, { useState } from "react";
+import react, { useState } from "react";
 import styles from "../../styles/form/steg1.module.scss";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";

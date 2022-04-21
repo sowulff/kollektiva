@@ -5,7 +5,7 @@ import FormWrapper from "../../components/FormWrapper.js";
 import UploadICon from "../../assets/steg4/upload_arrow.svg";
 import styles from "../../styles/form/steg4.module.scss";
 import Image from "next/image";
-
+import react from "react";
 export default function Images() {
   const state = useContext(AppContext);
   let { formData } = state.state;
