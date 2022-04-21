@@ -1,4 +1,4 @@
-import style from "../../styles/form/sidebar.module.scss";
+import style from "../styles/form/sidebar.module.scss";
 
 const Sidebar = ({ mainStep, currentSubStep }) => {
   return (
