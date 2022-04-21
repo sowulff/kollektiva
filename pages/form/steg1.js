@@ -20,10 +20,9 @@ export default function RentalType() {
   const handleFormData = (input) => (e) => {
     const currChecked = e.target.parentNode.parentNode;
     currChecked.dataset.active = true;
-    
+
     if (lastChecked) lastChecked.dataset.active = false;
-    setLastChecked(currChecked);  
-    
+    setLastChecked(currChecked);
 
     const { value } = e.target;
     state.setFormData({ ...formData, [input]: value });
@@ -31,7 +30,7 @@ export default function RentalType() {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
+      <Sidebar step={1} substep={1} />
 
       <FormWrapper
         title="Hur vill du hyra ut?"
