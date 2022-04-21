@@ -3,7 +3,7 @@ import LinksCompnent from "./LinksCompnent";
 import logoMobile from "../assets/logoMobile.svg";
 import logoFooterMobile from "../assets/logoFooterMobile.svg";
 import Image from "next/image";
-const FormWrapper = ({ title, description, children, next, prev }) => {
+const FormWrapper = ({ title, description, children, next, prev, publish }) => {
   return (
     <div className={style.container}>
       <div className={style.header}>
@@ -19,7 +19,7 @@ const FormWrapper = ({ title, description, children, next, prev }) => {
         <p>{description}</p>
       </div>
       <div>{children}</div>
-      <LinksCompnent back={prev} next={next} />
+      <LinksCompnent back={prev} next={next} publish={publish} />
       <div className={style.logoFooter}>
         <Image
           // className={style.img}

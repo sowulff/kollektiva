@@ -43,11 +43,29 @@
 
             
             @media screen and (min-width: $tablet) {
+                display: inline;
+                position: relative;
+                box-sizing: border-box;
+                height: min-content;
                 img {
                     aspect-ratio: 1/1;
                     width: 100%;
                     object-fit: cover;
                     border-radius: 0.25rem;
+                }
+
+                p{
+                    display: none;
+                }
+
+                button {
+                    all:unset;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: rgba($color: white, $alpha: 0.8);
+                    border-radius: 0.1rem;
+                    cursor: pointer;
                 }
 
                 &:first-of-type{
@@ -98,7 +116,7 @@
             gap:0 2rem;
             padding: 1rem;
 
-            .img {
+            span {
                 grid-area: img;
                 place-self: center;
             }

@@ -6,10 +6,9 @@ import react from "react";
 import FormWrapper from "../../components/FormWrapper";
 
 export default function Comfort() {
-  const [useChecked, setChecked] = useState([]);
+  const [checked, setChecked] = useState([]);
   const state = useContext(AppContext);
   let { formData } = state.state;
-  console.log(formData);
 
   const comforts = [
     "Badkar",
@@ -33,24 +32,22 @@ export default function Comfort() {
   ];
 
   const handleCheck = (event) => {
-    var updatedList = [...useChecked];
-    if (event.target.useChecked) {
-      updatedList = [...useChecked, event.target.value];
+    var updatedList = [...checked];
+    if (event.target.checked) {
+      updatedList.push(event.target.value);
     } else {
-      updatedList.splice(useChecked.indexOf(event.target.value), 1);
+      updatedList.splice(checked.indexOf(event.target.value), 1);
     }
     setChecked(updatedList);
+
+    state.setFormData({ ...formData, comfort: [...updatedList] });
   };
 
   // för check till objekt
-  const checkedItems = useChecked.length
-    ? useChecked.reduce((total, item) => [...total, item], [])
-    : [];
-
-  useEffect(() => {
-    state.setFormData({ ...formData, comfort: [...useChecked] });
-  }, [useChecked, state, formData]);
-  console.log(formData);
+  const checkedItems =
+    checked.length < 1
+      ? checked.reduce((total, item) => [...total, item], [])
+      : [];
 
   return (
     <div className={styles.container}>

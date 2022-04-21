@@ -4,7 +4,7 @@ import nextStep from "../assets/next.svg";
 import prevStep from "../assets/prev.svg";
 import Image from "next/image";
 
-export default function Links({ next, back }) {
+export default function Links({ next, back, publish }) {
   const linkPrefix = "/form/";
   return (
     <div className={link.links}>
@@ -16,7 +16,7 @@ export default function Links({ next, back }) {
       </Link>
       <Link href={linkPrefix + next}>
         <a className={link.next}>
-          Nästa{" "}
+          {publish ? "Ja, Publicera min bostad" : "Nästa "}
           <Image src={nextStep.src} width="15" height="15" alt="prev step" />
         </a>
       </Link>

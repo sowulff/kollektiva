@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar.js";
 import FormWrapper from "../../components/FormWrapper.js";
 import UploadICon from "../../assets/steg4/upload_arrow.svg";
+import TrashIcon from "../../assets/steg4/trash-2.svg";
 import styles from "../../styles/form/steg4.module.scss";
 import Image from "next/image";
 import react from "react";
@@ -25,7 +26,7 @@ export default function Images() {
     }
     console.log(uploadedImages);
     state.setFormData({ ...formData, ...uploadedImages });
-  }, [image, state, formData, uploadedImages]);
+  }, [image]);
   return (
     <div className={styles.container}>
       <Sidebar mainStep={3} currentSubStep={1} />
@@ -75,7 +76,15 @@ const UploadedImage = ({ file }) => {
     <div className={styles.imageWrapper}>
       <Image src={image} alt={file.name} width="500" height="500" />
       <p>{file.name}</p>
-      <button>del</button>
+      <button>
+        <Image
+          src={TrashIcon.src}
+          width="30"
+          height="30"
+          alt="upload icon"
+          className={styles.img}
+        />
+      </button>
     </div>
   );
 };

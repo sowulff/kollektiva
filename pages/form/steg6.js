@@ -12,7 +12,7 @@ export default function Step6() {
   useEffect(() => {
     state.setFormData({ ...formData, description });
     console.log(formData);
-  }, [description, state, formData]);
+  }, [description]);
   return (
     <div className={styles.container}>
       <Sidebar mainStep={3} currentSubStep={3} />
