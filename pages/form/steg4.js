@@ -4,6 +4,7 @@ import Sidebar from "../../components/Sidebar";
 import FormWrapper from "../../components/FormWrapper.js";
 import UploadICon from "../../assets/steg4/upload_arrow.svg";
 import styles from "../../styles/form/steg4.module.scss";
+import Image from "next/image";
 
 export default function Images() {
   const state = useContext(AppContext);
@@ -66,7 +67,7 @@ const UploadedImage = ({ file }) => {
   const image = URL.createObjectURL(file);
   return (
     <div className={styles.imageWrapper}>
-      <img src={image} />
+      <Image src={image} alt={file.name} width="500" height="500" />
       <p>{file.name}</p>
       <button>del</button>
     </div>
