@@ -19,11 +19,10 @@ export default function Images() {
         images: [...uploadedImages.images, file],
       });
     }
-    console.log(uploadedImages);
     if (uploadedImages.images.length > 9) {
       document.getElementById("seemore").style.display = "flex";
     }
-
+    console.log(uploadedImages);
     state.setFormData({ ...formData, ...uploadedImages });
   }, [image]);
   return (
@@ -48,12 +47,7 @@ export default function Images() {
             <div id="previews" className={styles.previews}>
               {uploadedImages.images.map(
                 (file, index) =>
-                  index < 10 && (
-                    <UploadedImage
-                      image={URL.createObjectURL(file)}
-                      key={index}
-                    />
-                  )
+                  index < 10 && <UploadedImage file={file} key={index} />
               )}
               <button id="seemore" className={styles.more}>
                 +{uploadedImages.images.length - 10}
@@ -68,10 +62,13 @@ export default function Images() {
   );
 }
 
-const UploadedImage = ({ image }) => {
+const UploadedImage = ({ file }) => {
+  const image = URL.createObjectURL(file);
   return (
     <div className={styles.imageWrapper}>
       <img src={image} />
+      <p>{file.name}</p>
+      <button>del</button>
     </div>
   );
 };
