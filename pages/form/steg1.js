@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "../../styles/form/steg1.module.scss";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-import HouseIcon from "../../assets//steg1/HouseIcon";
+import HouseIcon from "../../assets/steg1/HouseIcon";
 import bedIcon from "../../assets/steg1/bedIcon.svg";
 import changeHouseIcon from "../../assets/steg1/changeHouseIcon.svg";
 import logo from "../../assets/logo.svg";
@@ -42,10 +42,6 @@ export default function RentalType() {
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                {/* <object type="svg" data={houseIcon}>
-                  Kiwi Logo
-                </object> */}
-
                 <HouseIcon fill="red" className={styles.icon} />
                 <h4>Hyra ut hela bostaden</h4>
               </div>

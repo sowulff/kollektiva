@@ -6,7 +6,7 @@ import { useContext } from "react";
 import Sidebar from "../../components/sidebar";
 import FormWrapper from "../../components/FormWrapper";
 import styles from "../../styles/form/steg1.module.scss";
-import houseIcon from "../../assets/steg1/houseIcon.svg";
+import HouseIcon from "../../assets/steg1/HouseIcon";
 import lgh from "../../assets/steg1/lgh.svg";
 import twoHouseIcon from "../../assets/steg1/twoHouseIcon.svg";
 import garageIcon from "../../assets/steg1/garageIcon.svg";
@@ -21,15 +21,13 @@ export default function HouseType() {
   const handleFormData = (input) => (e) => {
     const currChecked = e.target.parentNode.parentNode;
     currChecked.dataset.active = true;
-    
+
     if (lastChecked) lastChecked.dataset.active = false;
-    setLastChecked(currChecked);  
-    
+    setLastChecked(currChecked);
 
     const { value } = e.target;
     state.setFormData({ ...formData, [input]: value });
   };
-
 
   return (
     <div className={styles.container}>
@@ -45,7 +43,7 @@ export default function HouseType() {
           <div className={styles.cards}>
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <HouseIcon />
               </div>
               <div className={styles.button}>
                 <input
@@ -92,7 +90,7 @@ export default function HouseType() {
 
             <div className={styles.card}>
               <div className={styles.wrapper}>
-                <img src={houseIcon.src} />
+                <HouseIcon />
               </div>
               <div className={styles.button}>
                 <input
