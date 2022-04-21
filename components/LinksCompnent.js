@@ -3,7 +3,7 @@ import link from "../styles/form/formLinks.module.scss";
 import nextStep from "../assets/next.svg";
 import prevStep from "../assets/prev.svg";
 
-export default ({ next, back }) => {
+export default function Links({ next, back }) {
   const linkPrefix = "/form/";
   return (
     <div className={link.links}>
@@ -20,4 +20,4 @@ export default ({ next, back }) => {
       </Link>
     </div>
   );
-};
+}
