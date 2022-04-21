@@ -1,6 +1,6 @@
 import style from "../../styles/form/sidebar.module.scss";
 
-export default Sidebar = ({ mainStep, currentSubStep }) => {
+const Sidebar = ({ mainStep, currentSubStep }) => {
   return (
     <div className={style.container}>
       <div className={style.steps}>
@@ -65,3 +65,5 @@ const SubStep = ({ current, completed }) => {
   if (completed) classes += " " + style.completed;
   return <div className={classes}></div>;
 };
+
+export default Sidebar;
