@@ -7,7 +7,7 @@ import FormWrapper from "../../components/FormWrapper";
 import Image from "next/image";
 import houseJpeg from "../../assets/house.jpeg";
 
-export default () => {
+export default function CompletePreview() {
   const state = useContext(AppContext);
   let { formData } = state.state;
 
@@ -15,7 +15,7 @@ export default () => {
     formData = {
       rentalType: "Hela",
       houseType: "Hela",
-      adress: "åvägen 16",
+      adress: "Adress",
       city: "43284",
       rooms: "38",
       price: "12000",
@@ -38,7 +38,10 @@ export default () => {
     };
   }
 
-  const image = URL.createObjectURL(formData.images[0]);
+  const image =
+    formData.images[0] !== houseJpeg
+      ? URL.createObjectURL(formData.images[0])
+      : houseJpeg;
   const adress = formData.adress;
   const description = formData.description;
   const price = formData.price;
@@ -67,4 +70,4 @@ export default () => {
       </FormWrapper>
     </div>
   );
-};
+}
