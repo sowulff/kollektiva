@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar.js";
 import styles from "../../styles/form/steg3.module.scss";
 import FormWrapper from "../../components/FormWrapper.js";
 

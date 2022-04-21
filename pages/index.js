@@ -1,4 +1,3 @@
-import { supabase } from "../utils/supabaseClient";
 import Link from "next/link";
 // import styles from "../styles/Home.module.scss";
 

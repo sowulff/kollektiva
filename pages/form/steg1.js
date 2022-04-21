@@ -7,7 +7,7 @@ import HouseIcon from "../../assets/steg1/HouseIcon";
 import BedIcon from "../../assets/steg1/BedIcon";
 import ChangeHouseIcon from "../../assets/steg1/ChangeHouseIcon";
 import logo from "../../assets/logo.svg";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/Sidebar.js";
 import FormWrapper from "../../components/FormWrapper";
 
 export default function RentalType() {

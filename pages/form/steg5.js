@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import AppContext from "../../components/AppContext";
 import styles from "../../styles/form/steg5.module.scss";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/Sidebar.js";
 import react from "react";
 import FormWrapper from "../../components/FormWrapper";
 
