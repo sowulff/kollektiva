@@ -33,23 +33,23 @@ export default function Comfort() {
   ];
 
   const handleCheck = (event) => {
-    var updatedList = [...checked];
-    if (event.target.checked) {
-      updatedList = [...checked, event.target.value];
+    var updatedList = [...useChecked];
+    if (event.target.useChecked) {
+      updatedList = [...useChecked, event.target.value];
     } else {
-      updatedList.splice(checked.indexOf(event.target.value), 1);
+      updatedList.splice(useChecked.indexOf(event.target.value), 1);
     }
     setChecked(updatedList);
   };
 
   // för check till objekt
-  const checkedItems = checked.length
-    ? checked.reduce((total, item) => [...total, item], [])
+  const checkedItems = useChecked.length
+    ? useChecked.reduce((total, item) => [...total, item], [])
     : [];
 
   useEffect(() => {
-    state.setFormData({ ...formData, comfort: [...checked] });
-  }, [checked]);
+    state.setFormData({ ...formData, comfort: [...useChecked] });
+  }, [useChecked]);
   console.log(formData);
 
   return (

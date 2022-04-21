@@ -2,10 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import AppContext from "../../components/AppContext";
 import styles from "../../styles/form/steg6.module.scss";
 import Sidebar from "../../components/sidebar";
-
+import react from "react";
 import FormWrapper from "../../components/FormWrapper";
 
-export default function step6() {
+export default function Step6() {
   const state = useContext(AppContext);
   let { formData } = state.state;
   const [description, setDescription] = useState({ description: "" });
