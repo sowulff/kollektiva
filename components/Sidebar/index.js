@@ -1,6 +1,6 @@
 import style from "../../styles/form/sidebar.module.scss";
 
-export default ({ mainStep, currentSubStep }) => {
+export default Sidebar = ({ mainStep, currentSubStep }) => {
   return (
     <div className={style.container}>
       <div className={style.steps}>
