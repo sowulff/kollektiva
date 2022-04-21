@@ -42,6 +42,7 @@ export default function Images() {
                 src={UploadICon.src}
                 width="50"
                 height="50"
+                alt="upload icon"
                 className={styles.img}
               />
               <p>Dra in dina bilder här</p>
