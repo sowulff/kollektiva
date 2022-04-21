@@ -1,22 +1,77 @@
 import AppContext from "../../components/AppContext";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar";
 import FormWrapper from "../../components/FormWrapper.js";
-
+import UploadICon from "../../assets/steg4/upload_arrow.svg";
 import styles from "../../styles/form/steg4.module.scss";
-export default function Images() {
-  const formKey = "images";
-  const state = useContext(AppContext);
 
+export default function Images() {
+  const state = useContext(AppContext);
   let { formData } = state.state;
 
-  console.log(formData);
+  const [image, setImage] = useState(null);
+  const [uploadedImages, setUploadedImages] = useState({ images: [] });
+
+  useEffect(() => {
+    const [file] = images.files;
+    if (file) {
+      setUploadedImages({
+        images: [...uploadedImages.images, file],
+      });
+    }
+    console.log(uploadedImages);
+    if (uploadedImages.images.length > 9) {
+      document.getElementById("seemore").style.display = "flex";
+    }
+
+    state.setFormData({ ...formData, ...uploadedImages });
+  }, [image]);
   return (
     <div className={styles.container}>
       <Sidebar mainStep={3} currentSubStep={3} />
-      <FormWrapper title="images" description="test" next="steg5" prev="steg3">
-        <form></form>
+      <FormWrapper
+        title="Ladda upp dina bilder"
+        description="Bifoga dina bilder och planritning, för att bättre visa hur din bostad ser ut"
+        next="steg5"
+        prev="steg3"
+      >
+        <form className={styles.main}>
+          <label htmlFor="images" className={styles.inputLabel}>
+            <div>
+              <img src={UploadICon.src} />
+              <p>Dra in dina bilder här</p>
+              <p>Välj från enhet</p>
+            </div>
+          </label>
+          <input id="images" type="file" onChange={(x) => setImage(x)} />
+          {uploadedImages.images.length > 0 ? (
+            <div id="previews" className={styles.previews}>
+              {uploadedImages.images.map(
+                (file, index) =>
+                  index < 10 && (
+                    <UploadedImage
+                      image={URL.createObjectURL(file)}
+                      key={index}
+                    />
+                  )
+              )}
+              <button id="seemore" className={styles.more}>
+                +{uploadedImages.images.length - 10}
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
+        </form>
       </FormWrapper>
     </div>
   );
 }
+
+const UploadedImage = ({ image }) => {
+  return (
+    <div className={styles.imageWrapper}>
+      <img src={image} />
+    </div>
+  );
+};

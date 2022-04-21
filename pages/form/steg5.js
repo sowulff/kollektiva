@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useContext, useState, useEffect } from "react";
+import AppContext from "../../components/AppContext";
 import styles from "../../styles/form/steg5.module.scss";
 import Sidebar from "../../components/sidebar";
 
@@ -7,6 +7,10 @@ import FormWrapper from "../../components/FormWrapper";
 
 export default function comfort() {
   const [checked, setChecked] = useState([]);
+  const state = useContext(AppContext);
+  let { formData } = state.state;
+  console.log(formData);
+
   const comforts = [
     "Badkar",
     "Balkong/uteplats",
@@ -41,9 +45,12 @@ export default function comfort() {
   // för check till objekt
   const checkedItems = checked.length
     ? checked.reduce((total, item) => [...total, item], [])
-    : false;
+    : [];
 
-  console.log(checkedItems);
+  useEffect(() => {
+    state.setFormData({ ...formData, comfort: [...checked] });
+  }, [checked]);
+  console.log(formData);
 
   return (
     <div className={styles.container}>
