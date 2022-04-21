@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
 import AppContext from "../../components/AppContext";
 import { useContext } from "react";
 import Sidebar from "../../components/Sidebar";

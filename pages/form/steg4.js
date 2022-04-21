@@ -13,13 +13,10 @@ export default function Images() {
   console.log(formData);
   return (
     <div className={styles.container}>
-      <Sidebar />
-      <FormWrapper
-        title="info"
-        description="test"
-        next="steg5"
-        prev="steg3"
-      ></FormWrapper>
+      <Sidebar mainStep={3} currentSubStep={3} />
+      <FormWrapper title="images" description="test" next="steg5" prev="steg3">
+        <form></form>
+      </FormWrapper>
     </div>
   );
 }

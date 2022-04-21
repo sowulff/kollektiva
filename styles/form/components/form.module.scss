@@ -1,5 +1,6 @@
 @import "../../variables.scss";
 .container {
+  margin: 0;
   padding: 0 2rem;
   display: grid;
   grid-template-rows: min-content 1fr min-content;

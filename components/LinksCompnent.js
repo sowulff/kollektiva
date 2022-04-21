@@ -4,15 +4,16 @@ import nextStep from "../assets/next.svg";
 import prevStep from "../assets/prev.svg";
 
 export default ({ next, back }) => {
+  const linkPrefix = "/form/";
   return (
     <div className={link.links}>
-      <Link href={back}>
+      <Link href={linkPrefix + back}>
         <a className={link.prev}>
           <img src={prevStep.src} />
           Gå Tillbaka
         </a>
       </Link>
-      <Link href={next}>
+      <Link href={linkPrefix + next}>
         <a className={link.next}>
           Nästa <img src={nextStep.src} />
         </a>
