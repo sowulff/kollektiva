@@ -49,7 +49,7 @@ export default function Comfort() {
 
   useEffect(() => {
     state.setFormData({ ...formData, comfort: [...useChecked] });
-  }, [useChecked]);
+  }, useChecked);
   console.log(formData);
 
   return (
