@@ -54,7 +54,7 @@ export default function Comfort() {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
+      <Sidebar mainStep={3} currentSubStep={2} />
 
       <FormWrapper
         title="Några bekvämligheter?"

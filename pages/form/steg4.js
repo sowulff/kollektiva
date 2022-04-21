@@ -28,7 +28,7 @@ export default function Images() {
   }, [image, state, formData, uploadedImages]);
   return (
     <div className={styles.container}>
-      <Sidebar mainStep={3} currentSubStep={3} />
+      <Sidebar mainStep={3} currentSubStep={1} />
       <FormWrapper
         title="Ladda upp dina bilder"
         description="Bifoga dina bilder och planritning, för att bättre visa hur din bostad ser ut"

@@ -30,7 +30,7 @@ export default function RentalType() {
 
   return (
     <div className={styles.container}>
-      <Sidebar step={2} substep={1} />
+      <Sidebar mainStep={2} currentSubStep={1} />
 
       <FormWrapper
         title="Hur vill du hyra ut?"

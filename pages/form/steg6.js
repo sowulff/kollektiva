@@ -15,7 +15,7 @@ export default function Step6() {
   }, [description, state, formData]);
   return (
     <div className={styles.container}>
-      <Sidebar />
+      <Sidebar mainStep={3} currentSubStep={3} />
 
       <FormWrapper
         title="Har du något mer du vill berätta?"

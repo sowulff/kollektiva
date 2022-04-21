@@ -31,7 +31,7 @@ export default function HouseType() {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
+      <Sidebar mainStep={2} currentSubStep={2} />
 
       <FormWrapper
         title="Vad för bostadstyp vill du hyra ut?"

@@ -14,19 +14,19 @@ const Sidebar = ({ mainStep, currentSubStep }) => {
           status={(mainStep === 2 && "active") || (mainStep > 2 && "completed")}
           title="Om din bostad"
           current={currentSubStep}
-          subSteps={4}
+          subSteps={3}
         />
         <Step
           status={(mainStep === 3 && "active") || (mainStep > 3 && "completed")}
           title="Detaljerad information"
           current={currentSubStep}
-          subSteps={4}
+          subSteps={3}
         />
         <Step
           status={(mainStep === 4 && "active") || (mainStep > 4 && "completed")}
           title="Slutför"
           current={currentSubStep}
-          subSteps={3}
+          subSteps={0}
         />
       </div>
 
