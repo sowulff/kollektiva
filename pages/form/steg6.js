@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import AppContext from "../../components/AppContext";
 import styles from "../../styles/form/steg6.module.scss";
 import Sidebar from "../../components/Sidebar.js";
@@ -9,10 +9,12 @@ export default function Step6() {
   const state = useContext(AppContext);
   let { formData } = state.state;
   const [description, setDescription] = useState({ description: "" });
-  useEffect(() => {
-    state.setFormData({ ...formData, description });
-    console.log(formData);
-  }, [description]);
+
+  const handleChange = (x) => {
+    const descript = x.target.value;
+    setDescription(descript);
+    state.setFormData({ ...formData, description: descript });
+  };
   return (
     <div className={styles.container}>
       <Sidebar mainStep={3} currentSubStep={3} />
@@ -39,7 +41,7 @@ export default function Step6() {
               value={description.description}
               rows="5"
               placeholder="beskriv här"
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={handleChange}
             ></textarea>
           </div>
         </div>
