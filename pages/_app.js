@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Head from "next/head";
 import AppContext from "../components/AppContext";
 import "../styles/globals.scss";
 
@@ -15,6 +15,9 @@ function Kollektiva({ Component, pageProps }) {
       }}
     >
       <Component {...pageProps} />
+      <Head>
+        <title>Kollektiva</title>
+      </Head>
     </AppContext.Provider>
   );
 }

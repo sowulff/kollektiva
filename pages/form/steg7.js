@@ -14,7 +14,7 @@ export default function SetPrice() {
   };
   return (
     <div className={styles.container}>
-      <Sidebar mainStep={3} currentSubStep={3} />
+      <Sidebar mainStep={3} currentSubStep={4} />
 
       <FormWrapper
         title="Sätt ditt pris."

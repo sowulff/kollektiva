@@ -20,7 +20,7 @@ const Sidebar = ({ mainStep, currentSubStep }) => {
           status={(mainStep === 3 && "active") || (mainStep > 3 && "completed")}
           title="Detaljerad information"
           current={currentSubStep}
-          subSteps={3}
+          subSteps={4}
         />
         <Step
           status={(mainStep === 4 && "active") || (mainStep > 4 && "completed")}
